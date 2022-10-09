@@ -1,7 +1,7 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System.Linq.Expressions;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     //Generic Repository Design Pattern
     //class:referans tip,
