@@ -2,6 +2,7 @@
 
 namespace Entities.Concrete
 {
+    //Çıplak Class Kalmasın
     public class Product : IEntity
     {
         public int ProductId { get; set; }

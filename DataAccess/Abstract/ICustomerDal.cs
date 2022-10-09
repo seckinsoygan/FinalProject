@@ -2,7 +2,7 @@
 
 namespace DataAccess.Abstract
 {
-    public interface ICategoryDal : IEntityRepository<Category>
+    public interface ICustomerDal : IEntityRepository<Customer>
     {
 
     }
