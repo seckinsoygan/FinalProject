@@ -8,10 +8,24 @@ static void ProductTest()
 {
     ProductManager productManager = new ProductManager(new EfProductDal());
 
-    foreach (var product in productManager.GetProductDetails())
+    var Result = productManager.GetProductDetails();
+
+    if (Result.Success == true)
     {
-        Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+        foreach (var product in Result.Data)
+        {
+            Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+        }
     }
+    else
+    {
+        Console.WriteLine(Result.Message);
+    }
+
+    //foreach (var product in productManager.GetProductDetails().Data)
+    //{
+    //    Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+    //}
 }
 
 static void CategoryTest()
