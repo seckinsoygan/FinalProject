@@ -7,16 +7,14 @@ namespace WebAPI
 {
     public class Startup
     {
-        public IConfiguration configRoot
-        {
-            get;
-        }
         public Startup(IConfiguration configuration)
         {
-            configRoot = configuration;
+            Configuration = configuration;
         }
+        public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
             services.AddRazorPages();
             services.AddSingleton<IProductService, ProductManager>();
             services.AddSingleton<IProductDal, EfProductDal>();
