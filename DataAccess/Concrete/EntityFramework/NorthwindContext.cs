@@ -6,7 +6,7 @@ namespace DataAccess.Concrete.EntityFramework
     //Context : Db tabloları ile proje classlarını bağlamak.
     public class NorthwindContext : DbContext //Entity Frameworkteki DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)//override o ile hızlıca yazılabilir.
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Northwind;Trusted_Connection=true");
         }
