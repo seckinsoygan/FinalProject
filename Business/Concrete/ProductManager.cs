@@ -1,11 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
-using FluentValidation;
 
 namespace Business.Concrete
 {
@@ -18,16 +18,9 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-
-            var context = new ValidationContext<Product>(product);
-            ProductValidator productvalidator = new ProductValidator();
-            var result = productvalidator.Validate(context);
-            if (!result.IsValid)
-            {
-                throw new ValidationException(result.Errors);
-            }
 
             _productDal.Add(product);
             return new Result(true, Messages.ProductAdded);
