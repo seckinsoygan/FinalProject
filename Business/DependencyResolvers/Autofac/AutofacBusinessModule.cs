@@ -17,6 +17,7 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance(); //Biri senden IProductService isterse ona ProductManager instancesi ver.
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance(); // Biri senden IProductDal isterse ona EfProductDal instancesi ver.
             builder.RegisterType<FileLogger>().As<ILogger>().SingleInstance();//Biri senden ILogger isterse ona FileLogger ver.
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
 
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
