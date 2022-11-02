@@ -5,7 +5,7 @@ using FluentValidation;
 
 namespace Core.Aspects.Autofac.Validation
 {
-    public class ValidationAspect : MethodInterception
+    public class ValidationAspect : MethodInterception //Aspect : Methodun başında sonunda çalışacak yapı.
     {
         private Type _validatorType;
         public ValidationAspect(Type validatorType)

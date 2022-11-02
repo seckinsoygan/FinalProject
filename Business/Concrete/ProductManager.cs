@@ -21,9 +21,13 @@ namespace Business.Concrete
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-
+            //business code
             _productDal.Add(product);
+
             return new Result(true, Messages.ProductAdded);
+
+
+
         }
 
         public IDataResult<List<Product>> GetAll()
