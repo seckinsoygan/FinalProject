@@ -10,5 +10,6 @@
         public static string ProductCountOfCategoryError = "Ürüne ait kategori sayısı çok fazla.";
         public static string ProductnameAlreadyExists = "Bu isimde zaten başka bir ürün var.";
         public static string CategoryLimitExceded = "Kategori limiti aşıldığı için yeni ürün eklenemiyor";
+        public static string AuthorizationDenied = "Yetkiniz yok.";
     }
 }
